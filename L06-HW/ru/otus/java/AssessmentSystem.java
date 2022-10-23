@@ -17,7 +17,7 @@ public class AssessmentSystem {
             {"1. ++", "2. /", "3. %", "4. *"}
     };
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
 
         int correctCount = 0;
         int wrongCount = 0;
