@@ -10,7 +10,8 @@ public class AssessmentSystem {
             "Какой целочисленный примитивный тип в Java занимает 4 байта в памяти?",
             "Какой оператор вычисляет остаток от деления?"};
 
-    public static final String[][] ANSWERS = new String[][]{{"1. OAK", "2. Star7", "3. Polaris", "4. Spectrum"},
+    public static final String[][] ANSWERS = new String[][]{
+            {"1. OAK", "2. Star7", "3. Polaris", "4. Spectrum"},
             {"1. Byte", "2. Int", "3. Short", "4. Long"},
             {"1. ++", "2. /", "3. %", "4. *"}
     };
