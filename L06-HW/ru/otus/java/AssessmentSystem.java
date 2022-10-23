@@ -1,3 +1,4 @@
+import java.io.IOException;
 import java.util.Scanner;
 
 /**
@@ -16,7 +17,7 @@ public class AssessmentSystem {
             {"1. ++", "2. /", "3. %", "4. *"}
     };
 
-    public static void main(String[] args) {
+    public static void main(String[] args){
 
         int correctCount = 0;
         int wrongCount = 0;
@@ -27,18 +28,22 @@ public class AssessmentSystem {
         Scanner firstScanner = new Scanner(System.in);
         int firstAnswer = firstScanner.nextInt();
 
-        int firstResult = 0;
-
-        switch (firstResult) {
-            case 1 -> {
-                System.out.println(firstResult + "\n" + "Правильно");
+        switch (firstAnswer) {
+            case 1:
+                System.out.println(firstAnswer + "\n" + "Правильно");
                 correctCount++;
-            }
-            case 2, 3 -> {
-                System.out.println(firstResult + "\n" + "Неправильно");
+                break;
+            case 2:
+                System.out.println(firstAnswer + "\n" + "Неправильно");
                 wrongCount++;
-            }
-            default -> System.out.println("Неизвестная операция " + firstResult);
+                break;
+            case 3:
+                System.out.println(firstAnswer + "\n" + "Неправильно");
+                wrongCount++;
+                break;
+            default:
+                System.out.println("Неизвестная операция " + firstAnswer);
+                break;
         }
 
         System.out.println(QUESTIONS[1] + "\n" + ANSWERS[1][0] + "\n" + ANSWERS[1][1] + "\n" + ANSWERS[1][2]);
@@ -47,18 +52,22 @@ public class AssessmentSystem {
         Scanner secondScanner = new Scanner(System.in);
         int secondAnswer = secondScanner.nextInt();
 
-        int secondResult = 0;
-
         switch (secondAnswer) {
-            case 1, 3 -> {
+            case 1:
                 System.out.println(secondAnswer + "\n" + "Неправильно");
                 wrongCount++;
-            }
-            case 2 -> {
+                break;
+            case 2:
                 System.out.println(secondAnswer + "\n" + "Правильно");
                 correctCount++;
-            }
-            default -> System.out.println("Неизвестная операция " + secondAnswer);
+                break;
+            case 3:
+                System.out.println(secondAnswer + "\n" + "Неправильно");
+                wrongCount++;
+                break;
+            default:
+                System.out.println("Неизвестная операция " + secondAnswer);
+                break;
         }
 
         System.out.println(QUESTIONS[2] + "\n" + ANSWERS[2][0] + "\n" + ANSWERS[2][1] + "\n" + ANSWERS[2][2]);
@@ -67,18 +76,22 @@ public class AssessmentSystem {
         Scanner thirdScanner = new Scanner(System.in);
         int thirdAnswer = thirdScanner.nextInt();
 
-        int thirdResult = 0;
-
         switch (thirdAnswer) {
-            case 1, 2 -> {
+            case 1:
                 System.out.println(thirdAnswer + "\n" + "Неправильно");
                 wrongCount++;
-            }
-            case 3 -> {
+                break;
+            case 2:
+                System.out.println(thirdAnswer + "\n" + "Неправильно");
+                wrongCount++;
+                break;
+            case 3:
                 System.out.println(thirdAnswer + "\n" + "Правильно");
                 correctCount++;
-            }
-            default -> System.out.println("Неизвестная операция " + thirdAnswer);
+                break;
+            default:
+                System.out.println("Неизвестная операция " + thirdAnswer);
+                break;
         }
         System.out.println("Общий результат: правильно " + correctCount + ", неправильно " + wrongCount);
     }
