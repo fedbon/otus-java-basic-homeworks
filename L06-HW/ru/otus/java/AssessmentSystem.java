@@ -17,6 +17,7 @@ public class AssessmentSystem {
     };
 
     public static void main(String[] args) {
+
         int correctCount = 0;
         int wrongCount = 0;
 
@@ -49,17 +50,13 @@ public class AssessmentSystem {
         int secondResult = 0;
 
         switch (secondAnswer) {
-            case 1 -> {
+            case 1, 3 -> {
                 System.out.println(secondAnswer + "\n" + "Неправильно");
                 wrongCount++;
             }
             case 2 -> {
                 System.out.println(secondAnswer + "\n" + "Правильно");
                 correctCount++;
-            }
-            case 3 -> {
-                System.out.println(secondAnswer + "\n" + "Неправильно");
-                wrongCount++;
             }
             default -> System.out.println("Неизвестная операция " + secondAnswer);
         }
@@ -73,11 +70,7 @@ public class AssessmentSystem {
         int thirdResult = 0;
 
         switch (thirdAnswer) {
-            case 1 -> {
-                System.out.println(thirdAnswer + "\n" + "Неправильно");
-                wrongCount++;
-            }
-            case 2 -> {
+            case 1, 2 -> {
                 System.out.println(thirdAnswer + "\n" + "Неправильно");
                 wrongCount++;
             }
