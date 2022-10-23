@@ -23,13 +23,13 @@ public class BetterAssessmentSystem {
             }
             System.out.println("\n" + "Ваш ответ");
             int scanner = Scanner.nextInt();
-            if (scanner == CORRECT_ANSWERS[0]) {
-                System.out.println("Правильно");
-                correctCount++;
-            } else {
-                System.out.println("Неправильно");
-                wrongCount++;
-            }
+                if (scanner == CORRECT_ANSWERS[0]){
+                    System.out.println("Правильно");
+                    correctCount++;
+                } else {
+                    System.out.println("Неправильно");
+                    wrongCount++;
+                }
             System.out.println();
         }
         System.out.println("Общий результат: правильно " + correctCount + ", неправильно " + wrongCount);
