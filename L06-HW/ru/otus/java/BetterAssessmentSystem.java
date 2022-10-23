@@ -1,5 +1,9 @@
 import java.util.Scanner;
 
+/**
+ * Программа "Система тестирования" v.0.1b.
+ * Бондарев Федор Олегович
+ */
 public class BetterAssessmentSystem {
 
     private static final String[][] ANSWERS = new String[][]{
