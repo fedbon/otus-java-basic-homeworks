@@ -9,7 +9,7 @@ public class BetterAssessmentSystem {
             {"Какой оператор вычисляет остаток от деления?", "1. ++", "2. /", "3. %", "4. *"}
     };
 
-    private static int[] CORRECT_ANSWERS = new int[]{1, 2, 3};
+    private static final int[] CORRECT_ANSWERS = new int[]{1, 2, 3};
 
     public static void main(String[] args) {
         int correctCount = 0;
