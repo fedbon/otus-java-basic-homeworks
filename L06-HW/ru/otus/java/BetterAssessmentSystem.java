@@ -23,7 +23,7 @@ public class BetterAssessmentSystem {
             }
             System.out.println("\n" + "Ваш ответ");
             int scanner = Scanner.nextInt();
-                if (scanner == CORRECT_ANSWERS[0]){
+                if (scanner == CORRECT_ANSWERS[i]){
                     System.out.println("Правильно");
                     correctCount++;
                 } else {
