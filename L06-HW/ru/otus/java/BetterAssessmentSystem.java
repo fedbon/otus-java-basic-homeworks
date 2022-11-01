@@ -33,28 +33,27 @@ public class BetterAssessmentSystem {
                     if (i == k) System.out.print("\n" + ANSWERS[i][j] + " ");
                 }
             }
-            System.out.println("\n" + "Ваш ответ:");
+            System.out.println();
 
             Scanner sc = new Scanner(System.in);
-            int intChecker;
+            int answerChecker;
 
-            while (!sc.hasNextInt()) {
-                System.out.println("Ошибка ввода! Это не цифра");
+            do {
                 System.out.println("\n" + "Ваш ответ:");
-                sc.next();
-            }
+                while (!sc.hasNextInt()) {
+                    System.out.println("Ошибка ввода! Необходимо ввести число");
+                    System.out.println("\n" + "Ваш ответ:");
+                    sc.next();
+                }
+                answerChecker = sc.nextInt();
+                if (answerChecker < 1 || answerChecker > 4)
+                    System.out.println("Ошибка ввода! Выберете номер ответа от 1 до 4");
+            } while (answerChecker < 1 || answerChecker > 4);
 
-            intChecker = sc.nextInt();
-
-            while (intChecker > 4) {
-                System.out.println("Ошибка ввода!" + "\n" + "Выберете номер ответа из предложенного списка:");
-                intChecker = sc.nextInt();
-            }
-
-            if (intChecker == CORRECT_ANSWERS[k]) {
+            if (answerChecker == CORRECT_ANSWERS[k]) {
                 System.out.println("Правильно");
                 correctCount++;
-            } else if (intChecker != CORRECT_ANSWERS[k]) {
+            } else if (answerChecker != CORRECT_ANSWERS[k]) {
                 System.out.println("Неправильно");
                 wrongCount++;
             }
