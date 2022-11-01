@@ -24,8 +24,6 @@ public class BetterAssessmentSystem {
         int correctCount = 0;
         int wrongCount = 0;
 
-        Scanner Scanner = new Scanner(System.in);
-
         int k = 0;
 
         while (k < QUESTIONS.length) {
@@ -35,19 +33,28 @@ public class BetterAssessmentSystem {
                     if (i == k) System.out.print("\n" + ANSWERS[i][j] + " ");
                 }
             }
-            System.out.println();
             System.out.println("\n" + "Ваш ответ:");
 
-            int x = Scanner.nextInt();
+            Scanner sc = new Scanner(System.in);
+            int intChecker;
 
-            while (x > 4) {
-                System.out.println("Ошибка ввода!" + "\n" + "Выберете номер ответа из предложенного списка:");
-                x = Scanner.nextInt();
+            while (!sc.hasNextInt()) {
+                System.out.println("Ошибка ввода! Это не цифра");
+                System.out.println("\n" + "Ваш ответ:");
+                sc.next();
             }
-            if (x == CORRECT_ANSWERS[k]) {
+
+            intChecker = sc.nextInt();
+
+            while (intChecker > 4) {
+                System.out.println("Ошибка ввода!" + "\n" + "Выберете номер ответа из предложенного списка:");
+                intChecker = sc.nextInt();
+            }
+
+            if (intChecker == CORRECT_ANSWERS[k]) {
                 System.out.println("Правильно");
                 correctCount++;
-            } else if (x != CORRECT_ANSWERS[k]) {
+            } else if (intChecker != CORRECT_ANSWERS[k]) {
                 System.out.println("Неправильно");
                 wrongCount++;
             }
