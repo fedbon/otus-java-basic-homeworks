@@ -11,7 +11,7 @@ public class Test {
         this.blocks = blocks;
     }
 
-    void runTest() {
+    public void runTest() {
         for (TestElement block : blocks) {
             if (block.ask()) {
                 correctCount++;
