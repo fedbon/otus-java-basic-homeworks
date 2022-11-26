@@ -1,6 +1,7 @@
 package ru.otus.java;
 
 import java.util.HashMap;
+import java.util.List;
 
 public class DataBase {
     public HashMap<String, Client> dataBase = new HashMap<>();
@@ -18,12 +19,11 @@ public class DataBase {
         }
     }
 
-    public java.util.List<Account> getAccounts(Client client){
+    public List<Account> getAccounts(Client client){
         return dataBase.get(client.getClientName()).getAccountList();
     }
 
     public Client findClient(Account account){
         return accountToClientMap.get(account);
     }
-
 }

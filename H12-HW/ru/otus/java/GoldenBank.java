@@ -33,9 +33,9 @@ public class GoldenBank {
         dataBase.addAccount(bondarevFedorAccount3, bondarevFedor);
         dataBase.addAccount(bondarevFedorAccount4, bondarevFedor);
 
-        Client searchClient = new Client("Fedor Bondarev", 25);
+        Client findClient = new Client("Fedor Bondarev", 25);
 
-        List<Account> getAccounts = dataBase.getAccounts(searchClient);
+        List<Account> getAccounts = dataBase.getAccounts(findClient);
         Client findClient = dataBase.findClient(bondarevFedorAccount1);
     }
 }
