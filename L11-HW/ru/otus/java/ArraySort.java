@@ -7,7 +7,7 @@ import java.util.List;
 public class ArraySort {
     public static void main(String[] args) {
         List<Element> elements = new ArrayList<>();
-        for (int i = 0; i < 100_000; i++) {
+        for (int i = 0; i < 1500; i++) {
             elements.add(new Element(i));
         }
         Collections.shuffle(elements);
