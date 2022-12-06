@@ -25,7 +25,7 @@
 
 #Idea folders
 *.idea
-*.out
+*out
 
 # OS-specific files
 *.DS_Store
