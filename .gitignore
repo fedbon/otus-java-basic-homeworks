@@ -25,7 +25,6 @@
 
 #Idea folders
 *.idea
-*.tests
 
 # OS-specific files
 *.DS_Store
