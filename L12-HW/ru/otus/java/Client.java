@@ -4,9 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Client {
-    private String name;
-    private int age;
-    private ArrayList<Account> accounts = new ArrayList<>();
+    private final String name;
+    private final int age;
+    private final ArrayList<Account> accounts = new ArrayList<>();
 
     public Client(String name, int age) {
         this.name = name;

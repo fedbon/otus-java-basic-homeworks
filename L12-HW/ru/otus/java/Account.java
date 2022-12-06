@@ -1,8 +1,8 @@
 package ru.otus.java;
 
 public class Account {
-    private String accountId;
-    private int balance;
+    private final String accountId;
+    private final int balance;
 
     public Account(String accountId, int balance) {
         this.accountId = accountId;
