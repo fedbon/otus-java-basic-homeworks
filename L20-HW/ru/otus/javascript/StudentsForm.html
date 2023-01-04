@@ -1,0 +1,170 @@
+<!DOCTYPE>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>База данных студентов</title>
+
+    <style>
+        h2 {
+            color: black;
+        }
+
+        .students-tab {
+            border: 1px solid steelblue;
+            width: 650px;
+            border-collapse: collapse;
+            margin-bottom: 300px;
+        }
+
+        .students-tab tr td {
+            border: 1px solid steelblue;
+        }
+
+        .students-tab-col1 {
+            width: 300px;
+        }
+
+        .students-tab-col2 {
+            width: 120px;
+        }
+
+        .students-tab-col3 {
+            width: 150px;
+        }
+
+        .students-tab-col4 {
+            width: 80px;
+        }
+
+        .content-block {
+            width: 800px;
+            margin-left: 20px;
+        }
+
+        .input-form > input{
+            width: 80px;
+            overflow: auto;
+        }
+
+        .form-outline {
+            border: 1px solid steelblue;
+            width: 490px;
+            padding: 0 10px;
+        }
+
+
+    </style>
+
+</head>
+
+<body>
+
+<script>
+
+    "use strict"
+
+        var arrAges = [];
+
+        function addStudent () {
+
+
+            const studentsTab = document.getElementById("studentsTab").getElementsByTagName("tbody")[0];
+
+            let studentName = document.getElementById("studentName").value;
+
+            let birthDate = document.getElementById("birthDate").value;
+
+            let sex = document.getElementById("sex");
+            let sexOption = sex.options[sex.selectedIndex].text;
+
+            let ageDifMs = Date.now() - new Date(birthDate).getTime();
+            let ageDate = new Date(ageDifMs);
+            let age = Math.abs(ageDate.getUTCFullYear() - 1970);
+
+            arrAges.push(age);
+
+            const avgAge = arrAges.reduce((a, b) => a + b, 0) / arrAges.length;
+
+            const newRow = studentsTab.insertRow(studentsTab.rows.length);
+
+            const studentNameCell = newRow.insertCell(0);
+            const sexCell = newRow.insertCell(1);
+            const birthDateCell = newRow.insertCell(2);
+            const ageCell = newRow.insertCell(3);
+
+            studentNameCell.appendChild(document.createTextNode(studentName));
+            sexCell.appendChild(document.createTextNode(sexOption));
+            birthDateCell.appendChild(document.createTextNode(birthDate));
+            ageCell.appendChild(document.createTextNode(age));
+
+            const avgAgeCell = document.getElementById("avgAge");
+            avgAgeCell.innerHTML = Math.round(avgAge);
+    }
+
+
+</script>
+
+<h2>Форма добавления информации о студенте</h2>
+
+<div class="form-outline">
+    <form action="/add-students" method="POST">
+        <p>
+            <label for="name">Имя студента:</label>
+            <input id="studentName" type="text">
+        </p>
+
+        <p>
+            <label for="date">Дата рождения:</label>
+            <input id="birthDate" type="date" value="1980-03-30">
+        </p>
+
+        <p>
+            <label>
+                Пол:
+                <select id="sex">
+                    <option value="1" selected>Мужской</option>
+                    <option value="2">Женский</option>
+                </select>
+            </label>
+        </p>
+
+        <input type="button" id="add" value="Добавить" onclick="addStudent()">
+
+    </form>
+</div>
+
+<h2>Таблица студентов</h2>
+
+<table class="students-tab" id="studentsTab">
+
+    <thead>
+
+    <tr>
+        <td class="students-tab-col1">Имя студента</td>
+        <td class="students-tab-col2">Пол</td>
+        <td class="students-tab-col3">Дата рождения</td>
+        <td class="students-tab-col4">Возраст</td>
+    </tr>
+
+    </thead>
+
+    <tbody>
+    </tbody>
+
+    <tfoot>
+
+    <tr>
+        <td colspan="4">&nbsp;</td>
+    </tr>
+
+    <tr>
+        <td colspan="3">Средний возраст студентов</td>
+        <td id="avgAge"></td>
+    </tr>
+
+    </tfoot>
+
+</table>
+
+</body>
+</html>
